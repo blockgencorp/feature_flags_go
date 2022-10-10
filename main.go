@@ -14,7 +14,10 @@ type Response struct {
 }
 
 func HandleLambdaEvent(req Request) (Response, error) {
-	return Response{Feature: req.Feature, Flag: false}, nil
+	flags := make(map[string]bool)
+	flags["POST_RATE_ADJUSTMENT_ACTION"] = true
+	flags["POST_PRICE_RULE_ACTION"] = true
+	return Response{Feature: req.Feature, Flag: flags[req.Feature]}, nil
 }
 
 func main() {
