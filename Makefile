@@ -7,7 +7,7 @@ protoc:
 		src/main.proto
 
 build:
-	GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o target/main src/main.go 
+	GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o target/main src/*.go
 
 zip: build
 	zip target/function.zip target/main
