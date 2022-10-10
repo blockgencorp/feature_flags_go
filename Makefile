@@ -10,7 +10,7 @@ build:
 	GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o target/main src/*.go
 
 zip: build
-	zip target/function.zip target/main
+	zip -j target/function.zip target/main
 
 create: zip
 	aws lambda create-function \
