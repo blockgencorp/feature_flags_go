@@ -1,5 +1,5 @@
 build:
-	GOOS=linux GOARCH=amd64 go build main.go -ldflags "-s -w"
+	GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" main.go
 
 zip: build
 	zip function.zip main
