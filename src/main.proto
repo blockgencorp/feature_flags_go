@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "blockgencorp/main";
+
+package main;
+
+message Request {
+  string feature = 1;
+}
+
+message Response {
+  string feature = 1;
+  bool flag = 2;
+}
